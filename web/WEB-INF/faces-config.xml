@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+
+<navigation-rule>
+       <from-view-id>*</from-view-id>
+       
+    <navigation-case>
+           <from-outcome>login</from-outcome>
+            <to-view-id>/ui/adminhome.xhtml</to-view-id>
+            <redirect/>
+    </navigation-case>
+     <navigation-case>
+           <from-outcome>success</from-outcome>
+            <to-view-id>/home.xhtml</to-view-id>
+            <redirect/>
+    </navigation-case>
+     <navigation-case>
+           <from-outcome>successpsswrd</from-outcome>
+            <to-view-id>/ui/passwordchangeSuccess.xhtml</to-view-id>
+            <redirect/>
+    </navigation-case>
+    
+    <navigation-case>
+           <from-outcome>forget</from-outcome>
+            <to-view-id>/ui/forgotPassword.xhtml</to-view-id>
+            <redirect/>
+    </navigation-case>
+     <navigation-case>
+           <from-outcome>successRegister</from-outcome>
+            <to-view-id>/ui/createuserSuccess.xhtml</to-view-id>
+            <redirect/>
+    </navigation-case>
+    
+    <navigation-case>
+           <from-outcome>home</from-outcome>
+            <to-view-id>/home.xhtml</to-view-id>
+            <redirect/>
+    </navigation-case>
+    
+</navigation-rule>
+
+
+       
+
+    <!--for DailogFramework working in primefaces-->
+<!--    <application>
+        <action-listener>org.primefaces.application.DialogActionListener</action-listener>
+        <navigation-handler>org.primefaces.application.DialogNavigationHandler</navigation-handler>
+        <view-handler>org.primefaces.application.DialogViewHandler</view-handler>
+    </application>-->
+
+    <!--for loading properties file globally-->
+    <application>
+        <resource-bundle>
+            <base-name>nic.vahan.resources.label_names</base-name>
+            <var>label</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>nic.vahan.resources.permit_lable_name</base-name>
+            <var>pmtLabel</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>nic.vahan.resources.constant_values</base-name>
+            <var>constant</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>nic.vahan.resources.eAppInstructionMessages</base-name>
+            <var>msg</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>nic.vahan.resources.imageResource</base-name>
+            <var>imageName</var>
+        </resource-bundle>
+    </application>
+
+    
+<!--   
+    <managed-bean>
+        <managed-bean-name>visitedTokenMap</managed-bean-name>
+        <managed-bean-class>java.util.HashMap</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>-->
+    
+    <application>   
+        <!-- Application is started -->
+        <system-event-listener>
+           
+            <system-event-class>
+                javax.faces.event.PostConstructApplicationEvent
+            </system-event-class>    					
+        </system-event-listener> 	 
+ 
+        <!-- Before Application is shut down -->
+<!--        <system-event-listener>
+            <system-event-listener-class>
+                nic.vahan.common.jsf.utils.JSFAppListener
+            </system-event-listener-class>
+            <system-event-class>
+                javax.faces.event.PreDestroyApplicationEvent
+            </system-event-class>    					
+        </system-event-listener> -->
+        	
+    </application>
+    
+   
+
+</faces-config>

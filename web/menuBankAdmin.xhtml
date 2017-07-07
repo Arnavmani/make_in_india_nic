@@ -1,0 +1,72 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://xmlns.jcp.org/jsf/html"
+     xmlns:p="http://primefaces.org/ui"
+     xmlns:ui="http://java.sun.com/jsf/facelets"
+     xmlns:f="http://java.sun.com/jsf/core">
+    <ui:define name="windowTitle">  
+       Scroll Upload
+    </ui:define>
+    
+    <nav class="navbar-default navigation-background " role="navigation">
+        <!--<div class="container">-->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navigation-background-nav" id="navbar">
+            <ul class="nav navbar-nav">
+                <li>
+                    <h:link value="" outcome="/ui/adminhome.xhtml"><span class="glyphicon glyphicon-home"></span> Home</h:link>
+                </li>
+                               
+                <li class="dropdown">
+                    <a class="dropdown-toggle" id="submenu1" data-toggle="dropdown" title="Admin"><span class="fa fa-users"></span> Admin<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <h:link value="" title="Upload Reconcilation File" outcome="/ui/uploadReconcilationFile.xhtml">Upload Reconcilation File</h:link>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-user"></span> Profile <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <h:link value="" id="submenu3"  outcome="/ui/changepasswordByadmin.xhtml" title="Change Password">Change Password</h:link>
+                        </li>
+
+                    </ul>
+                </li>
+                
+            </ul>
+            
+            <ul class="nav navbar-nav navbar-right">
+                
+               
+               <li>
+                 <p:commandLink id="loginlink"  value="Login" rendered="#{sessionScope['UserId'] == null}" ajax="true"    styleClass="glyphicon glyphicon-log-in"/>
+                </li>
+                <li> 
+                    <p:commandLink id="logout"  value="Logout"  action="#{logInBean.logoutUser()}"  immediate="true" rendered="#{sessionScope['UserId'] != null}" ajax="true" 
+                                    styleClass="glyphicon glyphicon-log-out" >
+                        <p:confirm header="Confirmation" message="Do You Want to Log Out ?" icon="ui-icon-alert" />
+                    </p:commandLink>
+                    <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                        <p:commandButton value="Yes" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"  immediate="true"/>
+                        <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close"  immediate="true"/>
+                    </p:confirmDialog>
+                    
+                    <p:commandButton style="display: none;" />
+                </li>
+                
+                
+                
+                
+            </ul>
+              
+        </div>
+    </nav>
+</div>

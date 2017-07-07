@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition
+    template="/masterLayoutPage.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:pe="http://primefaces.org/ui/extensions"
+    xmlns:vahan="http://xmlns.jcp.org/jsf/composite/vcomponent">
+
+    <ui:define name="content">
+        <h:form id="registrUsr" prependId="false">
+
+            <div class="ui-grid ui-grid-responsive">
+
+
+                <div class="ui-grid-row">
+                    <div class="ui-grid-col-1"></div>
+                    <div class="ui-grid-col-10">
+                        <p:panel header="User Registration"> 
+                            <div class="ui-grid-row top-space bottom-space" style="text-decoration: none">
+
+                                <div class="ui-grid-col-12 center-position">
+                                    <h1 class="header-main">REGISTER HERE.</h1>
+                                </div>
+                            </div>
+                            <div class="ui-grid-row">
+                                <div class="ui-grid-col-2">
+                                    <p:outputLabel for="firstname" value=" First Name"/></div>
+                                <div class="ui-grid-col-3">
+                                    <p:inputText id="firstname" value="#{user.dobje.firstname}" />
+                                </div>
+                                <div class="ui-grid-col-1 resp-blank-height"></div>
+                                <div class="ui-grid-col-2">
+                                    <p:outputLabel for="lastname" value=" Last Name"/></div>
+                                <div class="ui-grid-col-3">
+                                    <p:inputText id="lastname" value="#{user.dobje.lastname}" /></div>
+                            </div>
+                            <div class="ui-grid-row top-space">
+                                <div class="ui-grid-col-2">
+                                    <p:outputLabel for="email" value="Email"/></div>
+                                <div class="ui-grid-col-3">
+                                    <p:inputText id="email"  value="#{user.dobje.email}" required="true" requiredMessage="Email Can't be blank" validatorMessage="Email Can't be blank">
+                                        <f:validateRegex pattern="[a-zA-Z0-9]+@[a-zA-Z]+.[a-zA-Z]{2,3}"></f:validateRegex></p:inputText>
+                                </div>
+                                <div class="ui-grid-col-1 resp-blank-height"></div>
+                                <div class="ui-grid-col-2">
+                                    <p:outputLabel for="aadharno" value="Aadhar no"/></div>
+                                <div class="ui-grid-col-3">
+                                    <p:inputText id="aadharno"  value="#{user.dobje.aadharno}" maxlength="12" required="true" >
+                                        <f:validateRegex pattern="[0-9]{12}"></f:validateRegex>
+                                    </p:inputText>
+                                </div>
+                            </div>
+
+
+                            <div class="ui-grid-row top-space">
+                                <div class="ui-grid-col-2">
+                                    <p:outputLabel for="password" value="Password"/></div>
+                                <div class="ui-grid-col-3">
+                                    <p:password id="password" value="#{user.dobje.password}" required="true" requiredMessage="Password Can't be blank" validatorMessage="Password Can't be blank">
+                                    </p:password>
+                                    <p:message for="password"></p:message>
+                                </div>
+                                <div class="ui-grid-col-1 resp-blank-height"></div>
+                                <div class="ui-grid-col-2">
+                                <p:outputLabel for="cpassword" value="Confirm Password"/></div>
+                                <div class="ui-grid-col-3">
+                                <p:password id="cpassword" value="#{user.dobje.confirmpassword}"/>  
+                                </div>
+                            </div>
+
+                    <div class="ui-grid-row top-space">
+                      <div class="ui-grid-col-2">
+                        <p:outputLabel for="gender" value="Gender"/></div>
+                        <div class="ui-grid-col-3">
+                            <p:selectOneRadio id="gender" value="#{user.dobje.gender}">
+                                <f:selectItem itemValue="M" itemLabel="Male"/>
+                                <f:selectItem itemValue="F" itemLabel="Female"/>
+                            </p:selectOneRadio></div>
+                        <div class="ui-grid-col-1 resp-blank-height"></div>
+                        <div class="ui-grid-col-2">
+                            <p:outputLabel for="fathersname" value="Fathers name"/></div>
+                        <div class="ui-grid-col-3">
+                            <p:inputText id="fathersname" value="#{user.dobje.fathersname}"/> </div> 
+                    </div>
+
+
+                    <div class="ui-grid-row top-space bottom-space">
+                        <div class="ui-grid-col-2">
+                            <p:outputLabel for="dob" value="DOB"/></div>
+                        <div class="ui-grid-col-3">
+                            <p:calendar id="dob" value="#{user.dobje.dob}" /></div>
+                        <div class="ui-grid-col-1 resp-blank-height"></div>
+                        <div class="ui-grid-col-2">
+                            <p:outputLabel for="contactno" value="Phone No"/></div>
+                        <div class="ui-grid-col-3">
+                            <p:inputText id="contactno" required="true" value="#{user.dobje.phoneno}" maxlength="10"/> 
+                        </div>
+                    </div>
+
+
+                    <div class="ui-grid-row top-space bottom-space">
+                        <div class="ui-grid-col-2">
+                            <p:outputLabel for="peradd" value="Permanent Address"/></div>
+                        <div class="ui-grid-col-3">
+                            <p:inputTextarea id="peradd" value="#{user.dobje.permanentaddress}"></p:inputTextarea>
+                        </div>
+                        <div class="ui-grid-col-1 resp-blank-height"></div>
+                        <div class="ui-grid-col-2">
+                            <p:outputLabel  for="tempadd" value="Temporary Address"/></div>
+                        <div class="ui-grid-col-3">
+                            <p:inputTextarea id="tempadd" value="#{user.dobje.temporaryaddress}"></p:inputTextarea>
+                        </div>
+                    </div>
+
+
+                    <div class="ui-grid-row top-space">
+                        <div class="ui-grid-col-2">
+                            <p:outputLabel for="state" value=" State"/></div>
+                        <div class="ui-grid-col-3">
+                            <p:inputText id="state" value="#{user.dobje.state}" required="true" /></div>
+                        <div class="ui-grid-col-1 resp-blank-height"></div>
+                        <div class="ui-grid-col-2">
+                            <p:outputLabel for="pincode" value=" Pincode"/></div>
+                        <div class="ui-grid-col-3">
+                            <p:inputText id="pincode" value="#{user.dobje.pincode}" required="true" /></div>
+                    </div>
+
+                    <div class="ui-grid-row top-space">
+                        <div class="ui-grid-col-2">
+                           <p:outputLabel for="seatlocation" value=" Seat Location"/>
+                        </div>    
+                        <div class="ui-grid-col-3">
+                            <p:selectOneMenu id="seatlocation" value="#{user.dobje.loc}" required="true" >
+                                <f:selectItem itemLabel="--select--" itemValue=""/>
+                                <f:selectItem itemLabel="CGO" itemValue="c"/>
+                                <f:selectItem itemLabel="shastripark" itemValue="s"/>
+                                <f:selectItem itemLabel="others" itemValue="o"/>
+                            </p:selectOneMenu>
+                        </div>
+                        <div class="ui-grid-col-1 resp-blank-height"></div>
+                        <div class="ui-grid-col-2">
+                            <p:outputLabel for="seatno" value=" Seat No"/></div>
+                        <div class="ui-grid-col-3">
+                            <p:inputText id="seatno" value="#{user.dobje.seatno}" required="true" /></div>
+                    </div>
+
+                    <div class="ui-grid-row top-space bottom-space">
+                        <div class="ui-grid-col-2">
+                            <p:outputLabel for="ip" value=" System IP address"  /> 
+                        </div>
+                        <div class="ui-grid-col-3">
+                            <p:inputText id="ip" value="#{user.dobje.IP}" />
+                        </div>
+                    </div>
+                    </p:panel>
+                          
+                       
+                    <p:panel header="Emergency Details">
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-2">
+                                <p:outputLabel for="emergencycontact" value="Contact"/></div>
+                            <div class="ui-grid-col-3">
+                                <p:inputText id="emergencycontact" value="#{user.dobje.emergencycontact}" required="true" maxlength="10"/></div>
+                            <div class="ui-grid-col-1 resp-blank-height"></div> 
+                            <div class="ui-grid-col-2">
+                                <p:outputLabel for="emergencyrelative" value="Name"/></div>
+                            <div class="ui-grid-col-3">
+                                <p:inputText id="emergencyrelative" value="#{user.dobje.emergencyrelative}" required="true"/></div>
+                            </div>
+                        
+                        
+                        <div class="ui-grid-row top-space">
+                            <div class="ui-grid-col-2 top-space">
+                                <p:outputLabel for="emergencyrelation" value="Relation"/></div>
+                            <div class="ui-grid-col-3">
+                                <p:selectOneMenu id="emergencyrelation" value="#{user.dobje.emergencyrelation}" required="true">
+                                    <f:selectItem itemLabel="--select--" itemValue=""/>
+                                    <f:selectItem itemLabel="mother" itemValue="m"/>
+                                    <f:selectItem itemLabel="father" itemValue="f"/>
+                                    <f:selectItem itemLabel="sister" itemValue="s"/>
+                                    <f:selectItem itemLabel="brother" itemValue="b"/>
+                                    <f:selectItem itemLabel="sister-in-law" itemValue="sl"/>
+                                    <f:selectItem itemLabel="brother-in-law" itemValue="bl"/>
+                                    <f:selectItem itemLabel="nephew" itemValue="np"/>
+                                    <f:selectItem itemLabel="niece" itemValue="nc"/>
+                                    <f:selectItem itemLabel="son" itemValue="so"/>
+                                    <f:selectItem itemLabel="daughter" itemValue="d"/>
+                                    <f:selectItem itemLabel="son-in-law" itemValue="sl"/>
+                                    <f:selectItem itemLabel="daughter-in-law" itemValue="dl"/>
+                                    <f:selectItem itemLabel="others" itemValue="o"/>
+                                </p:selectOneMenu>
+                            </div>
+                        </div>
+                       
+                        <center>
+                            <p:commandButton id="submit-button" value="Submit" action="#{user.adddata()}" ></p:commandButton></center>
+                    </p:panel> 
+                    </div>     
+                </div>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>

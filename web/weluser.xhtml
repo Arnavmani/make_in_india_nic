@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:pe="http://primefaces.org/ui/extensions"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:vahan="http://xmlns.jcp.org/jsf/composite/vcomponent">
+    <h:head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+        <title>
+            <ui:insert name="windowTitle">#{label.vahanTitle}</ui:insert>
+        </title>
+        <link rel="shortcut icon" type="image/x-icon" href="#{resource['images/vahan_icon.ico']}"/>
+        <h:outputStylesheet library="css" name="grid-css.css"/>
+        <h:outputStylesheet library="css" name="layout.min.css"/>
+        <h:outputScript library="bootstrap-3.3.1" name="js/bootstrap.min.js" />
+        <h:outputScript library="jquery" name="jquery.marquee.min.js" />
+        <h:outputScript library="js" name="md5.js" />
+        
+
+
+    </h:head>
+
+    <h:body id="welcomeuser">
+
+        <h:form id="welcomeuserhome" prependId="false"> 
+            <div id="bodyPanel">              
+                <div class="ui-grid ui-grid-responsive">
+                   <div class="ui-grid-row">
+                       
+                        <div class="ui-grid-col-12">
+                            <ui:insert name="heading">
+                                <ui:include src="/leftMenuPanel.xhtml"/>
+                            </ui:insert>  
+                        </div>
+                    </div>
+                    
+                     <div class="ui-grid-row">
+                    <div class="ui-grid-col-3">
+                        
+                    </div>   
+                    <div class="ui-grid-col-6">
+                        <p:panel header="LOGIN" style="font-weight: bolder">
+                            <div class="ui-grid-row top-space">
+                                <div class="ui-grid-col-2">
+                                    
+                                </div>
+                                <div class="ui-grid-col-4">
+                                    <p:outputLabel for="email" value="EMAIL" style="font-weight: bolder !important;"/></div>
+                                <div class="ui-grid-col-4">
+                                    <p:inputText id="email" value="#{login.email}" />
+                                </div>
+
+                                <div class="ui-grid-col-2">
+                                </div>
+
+                            </div>
+                            <div class="ui-grid-row top-space">
+                                <div class="ui-grid-col-2">
+                                </div>
+                                <div class="ui-grid-col-4">
+                                    <p:outputLabel for="userpassword" value="PASSWORD" style="font-weight: bolder !important;"/></div>
+                                <div class="ui-grid-col-4">
+                                    <p:inputText id="userpassword" value="#{login.password}" />
+                                </div>
+
+
+
+                                <div class="ui-grid-col-2"></div>
+                            </div>
+                            <div class="ui-grid-row">
+                                <div class="ui-grid-col-6 left-position top-space">
+                                    <h:commandLink value="Forgot Password ?" immediate="true"  styleClass="forget-link underline-text" style="color:black !important " />
+                                </div>
+                                <div class="ui-grid-col-6 right-position top-space">
+                                    <h:commandLink value="Not Registered Yet ?" immediate="true"  styleClass="forget-link underline-text" style="color:black !important " />
+                                </div>
+                            </div>
+
+                            <center>
+                                <p:commandButton id="login-button" value="SUBMIT" action="#{login.connect1()}" ></p:commandButton></center>
+                        </p:panel>
+                    </div>
+                    
+                </div> 
+                   
+                     <div class="ui-grid-row">
+                        <div class="ui-grid-col-12">
+                            <div id="footer_view">
+                                <ui:insert name="footer">
+                                    <ui:include src="/footer.xhtml"/>
+                                </ui:insert>
+                            </div> 
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            
+        </h:form>
+    </h:body>
+</html>
+

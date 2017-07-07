@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <nav class="navbar navbar-default navigation-background" role="navigation">
+        <div class="ui-grid ui-grid-responsive">
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2 left_logo">
+                    <a style="display: inline-block;" class="top-space">
+                        <h:link id="loginId1" outcome="home">
+                            <p:graphicImage library="images" name="makeinindia.png" alt="Parivahan Sewa" style="width: auto;"/>
+                        </h:link>
+                    </a>
+                </div>
+                <div class="ui-grid-col-8">
+                    <div class="heading_w center-position top-space">
+                        <div class="font-bold text-welcome-heading welcome-heading-size text-uppercase">ministry of road transport and highways</div>
+                        <div class="font-bold text-welcome-heading welcome-sub-heading-size">Government of India</div>
+                    </div>
+                </div>
+                <div class="ui-grid-col-2">
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar-default navigation-background " role="navigation">
+        <!--<div class="container">-->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navigation-background-nav" id="navbar">
+            <ul class="nav navbar-nav">
+                <li>
+                <h:link value=""   outcome="home" > <span class="glyphicon glyphicon-home"></span> Home</h:link>
+                    <!--<a href="home.xhtml" target="_parent"> <span class="glyphicon glyphicon-home"></span> Home</a>-->
+                </li>
+                <li>
+                        <h:link value="" outcome="/registeration.xhtml" > <span class="glyphicon glyphicon-pencil"></span> Registration</h:link>
+                </li>
+                
+            </ul>
+            
+           <ul class="nav navbar-nav navbar-right">
+                <li>
+
+                    
+                    <!--                     <p:commandButton  id="loginlink1"  value="Login"      styleClass="glyphicon glyphicon-log-in" />-->
+                    <h:link  outcome="/login.xhtml" > <span class="glyphicon glyphicon-log-in"></span> Login</h:link>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+</html>

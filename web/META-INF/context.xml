@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/NIC">
+  <Resource auth="Container" driverClassName="org.postgresql.Driver" maxActive="50" maxIdle="10" 
+            maxWait="20000" name="jdbc/vow4" password="9807074172" removeAbandoned="true" removeAbandonedTimeout="120" 
+            type="javax.sql.DataSource" url="jdbc:postgresql://localhost:5432/getdata" username="postgres"/>
+</Context>

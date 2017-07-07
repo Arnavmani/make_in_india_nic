@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<ui:composition
+    template="/masterLayoutPage.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:pe="http://primefaces.org/ui/extensions"
+    xmlns:vahan="http://xmlns.jcp.org/jsf/composite/vcomponent">
+    <ui:define name="content">
+        <h:form>
+            <div class="ui-grid ui-grid-responsive">
+                <div class="ui-grid-row">
+                    <div class="ui-grid-col-3">
+                        
+                    </div>   
+                    <div class="ui-grid-col-6">
+                        <p:panel header="LOGIN" style="font-weight: bolder">
+                            <div class="ui-grid-row top-space">
+                                <div class="ui-grid-col-2">
+                                    
+                                </div>
+                                <div class="ui-grid-col-4">
+                                    <p:outputLabel for="email" value="EMAIL" style="font-weight: bolder !important;"/></div>
+                                <div class="ui-grid-col-4">
+                                    <p:inputText id="email" value="#{login.email}" />
+                                </div>
+
+                                <div class="ui-grid-col-2">
+                                </div>
+
+                            </div>
+                            <div class="ui-grid-row top-space">
+                                <div class="ui-grid-col-2">
+                                </div>
+                                <div class="ui-grid-col-4">
+                                    <p:outputLabel for="userpassword" value="PASSWORD" style="font-weight: bolder !important;"/></div>
+                                <div class="ui-grid-col-4">
+                                    <p:inputText id="userpassword" value="#{login.password}" />
+                                </div>
+
+
+
+                                <div class="ui-grid-col-2"></div>
+                            </div>
+                            <div class="ui-grid-row">
+                                <div class="ui-grid-col-6 left-position top-space">
+                                    <h:commandLink value="Forgot Password ?" immediate="true"  styleClass="forget-link underline-text" style="color:black !important " />
+                                </div>
+                                <div class="ui-grid-col-6 right-position top-space">
+                                    <h:commandLink value="Not Registered Yet ?" immediate="true"  styleClass="forget-link underline-text" style="color:black !important " />
+                                </div>
+                            </div>
+
+                            <center>
+                                <p:commandButton id="login-button" value="SUBMIT" action="#{login.connect1()}" ></p:commandButton></center>
+                        </p:panel>
+                    </div>
+                    
+                </div> 
+                <div class="ui-grid-row">
+                    <div class="ui-grid-col-12">
+                        <div id="footer_view">
+                            <ui:insert name="footer">
+                                <ui:include src="/footer.xhtml"/>
+                            </ui:insert>
+                        </div> 
+                    </div>
+                </div>
+
+            </div>
+
+
+        </h:form>
+    </ui:define>
+
+</ui:composition>
